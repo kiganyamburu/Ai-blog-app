@@ -25,6 +25,26 @@
           -webkit-transform: rotate(360deg);
         }
       }
+      .load {
+        width: 100px;
+        height: 100px;
+        margin: 110px auto 0;
+        border: solid 10px #8822aa;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        -webkit-transition: all 0.5s ease-in;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
+        transition: all 0.5s ease-in;
+        animation-name: rotate;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
     </style>
   </head>
   <body class="flex-col min-h-scrrn bg-gray-100 font-sans antialis">
@@ -58,6 +78,7 @@
           </p>
         </div>
         <br />
+
         <!-- youtube section  -->
         <div>
           <h2 class="text-xl mb-4 font-semibold">Enter Youtube Video Link</h2>
@@ -68,6 +89,8 @@
               placeholder="paste youtube-link..."
               class="flex-grow p-2 border border-blue-400 rounded-l-md"
             />
+
+            <!-- button -->
             <button
               id="generateBlogButton"
               class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition-colors"
@@ -75,8 +98,10 @@
               generate
             </button>
           </div>
+
           <!-- section for loading circle -->
           <div id="loading-circle" class="load"></div>
+
           <!-- generated blog display -->
           <section class="mt-10 flex-grow">
             <h2 class="text-xl mb-4 font-semibold">generated Blog Article</h2>
@@ -85,6 +110,8 @@
         </div>
       </div>
     </div>
+
+    <!-- footer -->
     <footer class="text-center p-4 bg-gray-200 text-black mt-6">
       powered by
       <a href="https://openai.com" class="text-blue-600">openAI</a>
