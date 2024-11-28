@@ -8,6 +8,24 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes rotate {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body class="flex-col min-h-scrrn bg-gray-100 font-sans antialis">
     <!-- navbar -->
@@ -57,12 +75,12 @@
               generate
             </button>
           </div>
+          <!-- section for loading circle -->
+          <div id="loading-circle" class="load"></div>
           <!-- generated blog display -->
           <section class="mt-10 flex-grow">
             <h2 class="text-xl mb-4 font-semibold">generated Blog Article</h2>
-            <div id="blogCOntent" class="mt-2 text-gray-700 space-y-4">
-              <!-- section for loading circle -->
-            </div>
+            <div id="blogCOntent" class="mt-2 text-gray-700 space-y-4"></div>
           </section>
         </div>
       </div>
@@ -71,8 +89,6 @@
       powered by
       <a href="https://openai.com" class="text-blue-600">openAI</a>
     </footer>
-    <script>
-      
-    </script>
+    <script></script>
   </body>
 </html>
