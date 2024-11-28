@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="flex-col min-h-scrrn bg-gray-100 font-sans antialis ">
+  <body class="flex-col min-h-scrrn bg-gray-100 font-sans antialis">
     <!-- navbar -->
     <nav class="bg-blue-600 p-4 text-white flex justify-between">
       <div>
@@ -19,13 +19,53 @@
         <a href="#" class="text-white hover:underline">logout</a>
       </div>
     </nav>
+    <br />
+    <br />
+
     <!-- main content -->
-    <div>
-<div>
-  <div>
-    
-  </div>
-</div>
+    <div class="flex-grow container mx-auto mt-10 px-4 sm:px-0">
+      <div
+        class="max-w-3wl max-auto bg-white p-6 tounde-lg shadow-md transition-transform transform hover:scale-105 flex-col"
+      >
+        <!-- intro section -->
+        <div class="text-center">
+          <h2 class="text-2xl font-semibold mb-4">
+            Welcome to the AI Blog generator
+          </h2>
+          <p class="text-gray-700">
+            This is a simple AI blog generator that uses the GPT-3 model to
+            generate blog posts. You can use this tool to generate blog posts
+            for your website or blog. Simply enter a topic and the AI will
+            generate a blog post for you.
+          </p>
+        </div>
+        <br />
+        <!-- youtube section  -->
+        <div>
+          <h2 class="text-xl mb-4 font-semibold">Enter Youtube Video Link</h2>
+          <div class="flex space-x-4">
+            <input
+              id="youtube-link"
+              type="url"
+              placeholder="paste youtube-link..."
+              class="flex-grow p-2 border border-blue-400 rounded-l-md"
+            />
+            <button
+              id="generateBlogButton"
+              class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition-colors"
+            >
+              generate
+            </button>
+          </div>
+          <!-- generated blog display -->
+          <section class="mt-10 flex-grow">
+            <h2 class="text-xl mb-4 font-semibold">generated Blog Article</h2>
+            <div id="blogCOntent" class="mt-2 text-gray-700 space-y-4">
+              <!-- section for loading circle -->
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
   </body>
 </html>
