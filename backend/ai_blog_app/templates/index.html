@@ -49,9 +49,9 @@
     </style>
   </head>
 
-
   <!-- the body -->
   <body class="flex-col min-h-scrrn bg-gray-100 font-sans antialis">
+
 
     <!-- navbar -->
     <nav class="bg-blue-600 p-4 text-white flex justify-between">
@@ -93,7 +93,7 @@
             <input
               id="youtube-link"
               type="url"
-              placeholder="paste youtube-link..."
+              placeholder="Paste youtube-link..."
               class="flex-grow p-2 border border-blue-400 rounded-l-md"
             />
 
@@ -102,29 +102,27 @@
               id="generateBlogButton"
               class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition-colors"
             >
-              generate
+              Generate
             </button>
           </div>
 
           <!-- section for loading circle -->
-          <div style="display:none" id="loading-circle" class="load"></div>
-
+          <div style="display: none" id="loading-circle" class="load"></div>
+          
 
           <!-- generated blog display -->
           <section class="mt-10 flex-grow">
-            <h2 class="text-xl mb-4 font-semibold">generated Blog Article</h2>
+            <h2 class="text-xl mb-4 font-semibold">Generated Blog Article</h2>
             <div id="blogCOntent" class="mt-2 text-gray-700 space-y-4"></div>
           </section>
         </div>
       </div>
     </div>
 
-
-
     <!-- footer -->
     <footer class="text-center p-4 bg-gray-200 text-black mt-6">
-      powered by
-      <a href="https://openai.com" class="text-blue-600">openAI</a>
+      Powered by
+      <a href="https://openai.com" class="text-blue-600">OpenAI</a>
     </footer>
     <script></script>
   </body>
