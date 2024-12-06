@@ -9,6 +9,13 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, 'index.html')
 
+
+
+
+def generate_blog(request):
+    pass
+    
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -24,6 +31,8 @@ def user_login(request):
             return render(request, 'login.html', {'error_messages': error_messages})
         return redirect(request,'login.html', {'error_message': error_messages} )
     return render(request, 'login.html')
+
+
 
 def user_signup(request):
     if request.method == 'POST':
@@ -46,6 +55,9 @@ def user_signup(request):
             error_messages = 'Passwords do not match'
             return render(request, 'signup.html', {'error_messages': error_messages})
     return render(request, 'signup.html')
+
+
+
 
 def user_logout(request):
     logout(request)
