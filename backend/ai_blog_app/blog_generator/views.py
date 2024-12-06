@@ -4,11 +4,16 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
-def login(request):
+def user_login(request):
     return render(request, 'login.html')
 
-def signup(request):
+def user_signup(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        repeatPassword = request.POST['repeatPassword']
     return render(request, 'signup.html')
 
-def logout(request):
+def user_logout(request):
     return render(request, 'logout.html')

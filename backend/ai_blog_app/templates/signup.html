@@ -15,8 +15,8 @@
         <h1 class="text-3xl font-bold">AI Blog generator</h1>
       </div>
       <div>
-        <a href="#" class="text-white hover:underline">Login</a>
-        <a href="#" class="text-white hover:underline">Sign up</a>
+        <a href="login" class="text-white hover:underline">Login</a>
+        <a href="signup" class="text-white hover:underline">Sign up</a>
       </div>
     </nav>
     <br />
@@ -25,8 +25,20 @@
 
     <div class="flex item-center justify-center h-screen">
       <div class="bg-white p-8 shadow-md rounded-lg max-w-md w-full">
+
+
         <!-- login form -->
-        <form class="space-x-4">
+
+        <form class="space-x-4" action="" method="POST">
+          {% csrf_token %}
+
+          {% if error_message %}
+          <div align="center" style="color: red;">
+            <h2>
+              {{error_message}}
+            </h2>
+          </div>
+          {% endif %}
           <h2 class="text-xl font-semibold mb-4">Sign up</h2>
 
           <div>
