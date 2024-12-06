@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def index(request):
     return render(request, 'index.html')
 
@@ -46,4 +48,5 @@ def user_signup(request):
     return render(request, 'signup.html')
 
 def user_logout(request):
-    return render(request, 'logout.html')
+    logout(request)
+    return redirect('/')
