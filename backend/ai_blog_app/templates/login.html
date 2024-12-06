@@ -23,16 +23,11 @@
     <!-- Main Content -->
     <div class="flex item-center justify-center h-screen">
       <div class="bg-white p-8 shadow-md rounded-lg max-w-md w-full">
-
-
         <!-- login form -->
         <form class="space-x-4" action="" method="POST">
-          {% csrf_token %}
-          {% if error_message %}
-          <div align="center" style="color: red;">
-            <h2>
-              {{error_message}}
-            </h2>
+          {% csrf_token %} {% if error_message %}
+          <div align="center" style="color: red">
+            <h2>{{error_message}}</h2>
           </div>
           {% endif %}
           <h2 class="text-xl font-semibold mb-4">Login</h2>
@@ -56,7 +51,7 @@
               type="password"
               id="password"
               name="password"
-              placeholder="Enter Your passwordS...."
+              placeholder="Enter Your password...."
               class="w-full p-2 border rounded"
             />
           </div>
@@ -73,7 +68,9 @@
     </div>
     <footer class="text-center p-4 bg-gray-200 text-black mt-6">
       Powered by
-      <a href="https://github.com/kiganyamburu" class="text-blue-600">Peter Mburu</a>
+      <a href="https://github.com/kiganyamburu" class="text-blue-600"
+        >Peter Mburu</a
+      >
     </footer>
   </body>
 </html>
