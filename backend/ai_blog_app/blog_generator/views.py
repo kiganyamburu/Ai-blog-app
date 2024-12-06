@@ -8,6 +8,19 @@ def index(request):
     return render(request, 'index.html')
 
 def user_login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        
+        user = authenticate(request, username = username, password = password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+        else:
+            error_messages = 'Invalid username or password'
+            return render(request, 'login.html', {'error_messages': error_messages})
+        return redirect(request,'login.html', {'error_message': error_messages} )
     return render(request, 'login.html')
 
 def user_signup(request):
@@ -17,7 +30,6 @@ def user_signup(request):
         password = request.POST['password']
         repeatPassword = request.POST['repeatPassword']
         
-        
         if password == repeatPassword:
             try:
                 user = User.objects.create_user(username, email, password)
@@ -25,8 +37,8 @@ def user_signup(request):
                 login(request, user)
                 return redirect('/')    
             except:
-                 error_messages = 'ERROR creating account'
-                 return render(request, 'signup.html', {'error_messages': error_messages})
+                error_messages = 'ERROR creating account'
+                return render(request, 'signup.html', {'error_messages': error_messages})
                 
         else:
             error_messages = 'Passwords do not match'
