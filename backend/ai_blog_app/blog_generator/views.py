@@ -6,11 +6,15 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
+
+
 # Create your views here.
 @login_required
 def index(request):
     return render(request, 'index.html')
 
+
+# generate_blog function
 @csrf_exempt
 def generate_blog(request):
     if request.method == 'POST':
@@ -30,7 +34,7 @@ def generate_blog(request):
         
         
     
-
+# user_login function
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -48,7 +52,7 @@ def user_login(request):
     return render(request, 'login.html')
 
 
-
+# user_signup function
 def user_signup(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -73,7 +77,7 @@ def user_signup(request):
 
 
 
-
+# user_logout function
 def user_logout(request):
     logout(request)
     return redirect('/')
