@@ -21,6 +21,7 @@ def generate_blog(request):
         try:
             data = json.loads(request.body)
             yt_link = data['link']
+            return JsonResponse({'content':yt_link})
         except (KeyError, json.JSONDecodeError):
             return JsonResponse({'error': 'Invalid request data sent'}, status=400)
         
@@ -29,6 +30,10 @@ def generate_blog(request):
         # get translation
         
         # use openAI to generate blog
+        
+        # save blog article to database
+        
+        # return blog article as response
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=405)
         
